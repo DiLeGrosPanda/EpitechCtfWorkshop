@@ -1,0 +1,94 @@
+{
+    "1. Web": {
+        "Web 1 - ID Spoofing": {
+            "id": 1,
+            "description": "When you are not who you say you are",
+            "flag": "Flag{YouAreSoGoodAtThisGameO_o}",
+            "path": "challenges/web_1",
+            "to_dl": false
+        },
+        "Web 2 - Easiest SQLI World": {
+            "id": 2,
+            "description": "SQLI",
+            "flag": "Flag{ThatWasAnEasyOne}",
+            "path": "challenges/web_2",
+            "to_dl": false
+        },
+        "Web 3 - SQLI+": {
+            "id": 3,
+            "description": "SQLI 2",
+            "flag": "Flag{GgAdmin}",
+            "path": "challenges/web_3",
+            "to_dl": false
+        },
+        "Web 4 - Change My Request": {
+            "id": 4,
+            "description": "How could you change my request ?",
+            "flag": "Flag{ThatIsCrazy}",
+            "path": "challenges/web_4",
+            "to_dl": false
+        },
+        "Web 5 - Change My Response": {
+            "id": 5,
+            "description": "Can you proxy it ?",
+            "flag": "Flag{YouAreTheBest}",
+            "path": "challenges/web_5",
+            "to_dl": false
+        }
+    },
+    "2. Crypto": {
+        "Crypto 1 - Oh well": {
+            "id": 6,
+            "description": "Which system end up with == ?",
+            "flag": "Flag{UneBasePourLesGouvernerTous}",
+            "path": "challenges/crypto_1",
+            "to_dl": false
+        },
+        "Crypto 2 - Think then Force": {
+            "id": 7,
+            "description": "Real world (obsolete?) hash",
+            "flag": "Flag{panda}",
+            "path": "challenges/crypto_2",
+            "to_dl": false
+        }
+    },
+    "3. Stegano": {
+        "Stegano 1 - Unbreakable": {
+            "id": 8,
+            "description": "Where can i be ?",
+            "flag": "Flag{Fake!}",
+            "path": "binary/trump.jpeg",
+            "to_dl": true
+        },
+        "Stegano 2 - That's two for one !": {
+            "id": 9,
+            "description": "Hint: Stefan Hetzl is such an artist O.o",
+            "flag": "Flag{ItShouldHaveBeenHidden}",
+            "path": "binary/imperial_march.wav",
+            "to_dl": true
+        },
+        "Stegano 2 - Can you find it ?": {
+            "id": 10,
+            "description": "That's an esoteric one !",
+            "flag": "Flag{GjLoL}",
+            "path": "binary/esoteric",
+            "to_dl": true
+        }
+    },
+    "4. Binary": {
+        "Binary 1 - Just get it": {
+            "id": 11,
+            "description": "Probably not too hard ?",
+            "flag": "ff",
+            "path": "binary/todo",
+            "to_dl": true
+        },
+        "Binary 2 - Simple overflow": {
+            "id": 12,
+            "description": "$ ssh workshop@51.77.109.158 // password: workshop",
+            "flag": "Flag{UrSoGood}",
+            "path": "binary/todo",
+            "to_dl": true
+        }
+    }
+}
