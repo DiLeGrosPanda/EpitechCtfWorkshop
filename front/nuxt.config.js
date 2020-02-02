@@ -47,7 +47,7 @@ export default {
   ],
   proxy: {
       '/api': {
-          target: 'http://127.0.0.1:5000/api',
+          target: 'http://localhost:5000/api',
           pathRewrite: {
               '^/api' : '/'
           }
@@ -58,13 +58,13 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+      proxy: true
   },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,
       themes: {

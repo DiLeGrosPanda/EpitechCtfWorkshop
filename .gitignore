@@ -1,0 +1,9 @@
+venv/
+node_modules
+dist
+.npm
+.nuxt
+.env
+.cache
+.nuxt
+.lock

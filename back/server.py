@@ -9,7 +9,7 @@ def loadChallenges():
     with open("./challenges.json") as fd:
         return json.load(fd)
 app = Flask(__name__)
-app.config['MYSQL_DATABASE_USER'] = ''
+app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'workshop_secu'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
@@ -22,7 +22,7 @@ mysql.init_app(app)
 @app.route("/api/foods")
 def getFoods():
     id = request.args.get("id")
-    if ";" in id:
+    if not id or ";" in id:
         return jsonify({"error": "Cheating.. mmh?"})
     cursor = mysql.connect().cursor()
     cursor.execute("SELECT * from foods where id=" + id)
@@ -33,7 +33,7 @@ def getFoods():
 @app.route("/api/foods2")
 def getFoods2():
     id = request.args.get("id")
-    if ";" in id:
+    if not id or ";" in id:
         return jsonify({"error": "Cheating.. mmh?"})
     cursor = mysql.connect().cursor()
     cursor.execute("SELECT * from foods2 where id=" + id)
@@ -80,13 +80,17 @@ def checkFlag():
 @app.route("/api/getChallenges")
 def getChallenges():
     challenges = loadChallenges()
-    print(type(challenges))
     for category in challenges.values():
         for chall in category.values():
             chall["flag"] = ""
-            print(chall)
     return jsonify({"challenges": challenges})
 
+@app.after_request
+def after_request(response):
+    response.headers['Access-Control-Allow-Origin'] = "*"
+    response.headers['Access-Control-Allow-Methods'] = 'PUT,GET,POST,DELETE'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+    return response
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")
