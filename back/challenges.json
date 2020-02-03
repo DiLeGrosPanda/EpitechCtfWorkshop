@@ -79,7 +79,7 @@
         "Binary 1 - Just get it": {
             "id": 11,
             "description": "Probably not too hard ?",
-            "flag": "ff",
+            "flag": "Flag{whatAnHiddenString}",
             "path": "binary/strings",
             "to_dl": true
         },
