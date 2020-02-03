@@ -80,7 +80,7 @@
             "id": 11,
             "description": "Probably not too hard ?",
             "flag": "ff",
-            "path": "binary/todo",
+            "path": "binary/strings",
             "to_dl": true
         },
         "Binary 2 - Simple overflow": {
@@ -88,7 +88,7 @@
             "description": "$ ssh workshop@51.77.109.158 // password: workshop",
             "flag": "Flag{UrSoGood}",
             "path": "binary/todo",
-            "to_dl": true
+            "to_dl": false
         }
     }
 }
